@@ -30,7 +30,7 @@ prueba.
 
 
 
-### Ejercicio 1 - Declaración y Tipos de Datos
+### 🔰 Ejercicio 1 - Declaración y Tipos de Datos
 -> Objetivo: Familiarizarse con la declaración de variables y la identificación de tipos de datos.
 
 1. Declara una variable para cada tipo de dato: Number, String, Boolean, Object, Null y Undefined.
@@ -43,7 +43,7 @@ prueba.
 En este ejercicio podemos observar como hago el uso del "var" para declarar varias variables y el uso del "console.log" para ponerlas en la terminal.
 
 
-### Ejercicio 2 - Operaciones Aritméticas
+### 🔰 Ejercicio 2 - Operaciones Aritméticas
 -> Objetivo: Realizar operaciones aritméticas básicas.
 
 1. Declara dos variables numéricas.
@@ -57,7 +57,7 @@ declaro varias variables para después proceder a hacer varios cálculos matemá
 
 
 
-### Ejercicio 3 - Comparaciones
+### 🔰 Ejercicio 3 - Comparaciones
 
 -> Objetivo: Comprender los operadores de comparación y cómo funcionan.
 
@@ -73,7 +73,7 @@ entre ellas para ver si son mayor o menor o igual. Hay que recalcar el uso de "=
 es la misma (Numérico, String, boolean...)
 
 
-### Ejercicio 4 - Estructuras Condicionales
+### 🔰 Ejercicio 4 - Estructuras Condicionales
 
 -> Objetivo: Implementar estructuras condicionales para controlar el flujo del programa.
 
@@ -85,14 +85,14 @@ es la misma (Numérico, String, boolean...)
 ![Foto del ejercicio 1](./fotos/FotoEjer4.PNG)
 
 #### Gif
-![Foto del ejercicio 1](./fotos/GifEjer4.gif)
+![Foto del ejercicio 1](./fotos/GifEjer4.GIF)
 
 En este ejercicio usamos el comando "prompt" para hacer que el usuario
 introduzca un valor. Una vez que obtenemos el valor que el usuario ha introducido lo comparamos para saber si es menor, mayor o igual a 10.
 En el caso de que sea igual a 10, la terminal nos dará un aviso de alerta
 
 
-### Ejercicio 5 - Bucles
+### 🔰 Ejercicio 5 - Bucles
 
 -> Objetivo: Implementar bucles para repetir acciones múltiples veces.
 
