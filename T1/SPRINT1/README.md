@@ -24,7 +24,7 @@ componentes.
 En este apartado voy a implementar todos los apartados anteriores, a hacer los ejercicios al completo y los gifs de cada
 prueba.
 
-![Fichero con las actividades en formato HTML]([IMAGEN captura1](https://github.com/Dvazalm/DAWEC/tree/50992cb3930944c24472ca7da30b37a359bcbe97/T1/SPRINT1/fotos/captura1.png)
+![Fichero con las actividades en formato HTML]([IMAGEN captura1](../fotos/captura1.png)
 
 ## 💡 Pruebas
 
