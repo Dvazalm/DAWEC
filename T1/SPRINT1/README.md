@@ -37,11 +37,9 @@ prueba.
 
 ![Foto del ejercicio 1](./fotos/FotoEjer1.PNG)
 
-```
-En este ejercicio podemos observar como hago el uso del "var"
-para declarar varias variables y el uso del "console.log" para ponerlas en la terminal.
-
-```
+``
+En este ejercicio podemos observar como hago el uso del "var" para declarar varias variables y el uso del "console.log" para ponerlas en la terminal.
+``
 ### Ejercicio 2 - Operaciones Aritméticas
 -> Objetivo: Realizar operaciones aritméticas básicas.
 
