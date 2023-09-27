@@ -35,7 +35,7 @@ prueba.
 
 2. Utiliza console.log para mostrar el valor y el tipo de cada variable.
 
-![Foto del ejercicio 1](https://github.com/Dvazalm/DAWEC/tree/50992cb3930944c24472ca7da30b37a359bcbe97/T1/SPRINT1/fotos/FotoEjer1.png)
+![Foto del ejercicio 1](https://github.com/Dvazalm/DAWEC/blob/bcf9d62ff35d8de7503c9c49f0211c773e84d1cb/T1/SPRINT1/fotos/FotoEjer1.png)
 
 ```
 En este ejercicio podemos observar como hago el uso del "var" para declarar varias variables y el uso del "console.log" para ponerlas en la terminal.
