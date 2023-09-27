@@ -20,13 +20,15 @@
 Para realizar este apartado de Tarea AVANZADA, lo primero que he hecho es ver el vídeo del profesor y ponerme a hacer correctamente los
 componentes.
 
-## 👨‍🎓 Implementación de la solución
+
+## 💡 Pruebas
+
 En este apartado voy a implementar todos los apartados anteriores, a hacer los ejercicios al completo y los gifs de cada
 prueba.
 
 ![Fichero con las actividades en formato HTML](./fotos/Captura1.PNG)
 
-## 💡 Pruebas
+
 
 ### Ejercicio 1 - Declaración y Tipos de Datos
 -> Objetivo: Familiarizarse con la declaración de variables y la identificación de tipos de datos.
