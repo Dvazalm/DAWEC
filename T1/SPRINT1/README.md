@@ -24,7 +24,7 @@ componentes.
 En este apartado voy a implementar todos los apartados anteriores, a hacer los ejercicios al completo y los gifs de cada
 prueba.
 
-![Fichero con las actividades en formato HTML]([IMAGEN captura1](../fotos/captura1.png)
+![Fichero con las actividades en formato HTML](../fotos/captura1.png)
 
 ## 💡 Pruebas
 
