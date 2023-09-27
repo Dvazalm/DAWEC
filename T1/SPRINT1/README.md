@@ -24,7 +24,7 @@ componentes.
 En este apartado voy a implementar todos los apartados anteriores, a hacer los ejercicios al completo y los gifs de cada
 prueba.
 
-![Fichero con las actividades en formato HTML](IMAGEN captura1)
+![Fichero con las actividades en formato HTML]([IMAGEN captura1](https://github.com/Dvazalm/DAWEC/tree/50992cb3930944c24472ca7da30b37a359bcbe97/T1/SPRINT1/fotos/captura1.png)
 
 ## 💡 Pruebas
 
@@ -35,7 +35,7 @@ prueba.
 
 2. Utiliza console.log para mostrar el valor y el tipo de cada variable.
 
-![Foto del ejercicio 1](FotoEjer1)
+![Foto del ejercicio 1](https://github.com/Dvazalm/DAWEC/tree/50992cb3930944c24472ca7da30b37a359bcbe97/T1/SPRINT1/fotos/FotoEjer1.png)
 
 ```
 En este ejercicio podemos observar como hago el uso del "var" para declarar varias variables y el uso del "console.log" para ponerlas en la terminal.
@@ -47,7 +47,7 @@ En este ejercicio podemos observar como hago el uso del "var" para declarar vari
 
 2. Realiza y muestra en la consola las operaciones de suma, resta, multiplicación, división y módulo entre estas variables.
 
-![Foto del ejercicio 2](FotoEjer2)
+![Foto del ejercicio 2](https://github.com/Dvazalm/DAWEC/tree/50992cb3930944c24472ca7da30b37a359bcbe97/T1/SPRINT1/fotos/FotoEjer2.png)
 ```
 En este ejercicio se puede comprobar como gracias al uso del "let" declaro varias variables para después proceder a hacer varios cálculos matemáticos con ellas.
 ```
@@ -59,7 +59,7 @@ En este ejercicio se puede comprobar como gracias al uso del "let" declaro varia
 
 2. Utiliza operadores de comparación para comparar estas variables entre sí y muestra los resultados en la consola.
 
-![Foto del ejercicio 3](FotoEjer3)
+![Foto del ejercicio 3](https://github.com/Dvazalm/DAWEC/tree/50992cb3930944c24472ca7da30b37a359bcbe97/T1/SPRINT1/fotos/FotoEjer3.png)
 
 ```
 En este ejercicio declaró tres variables y procedo a compararlas entre ellas para ver si son mayor o menor o igual. Hay que recalcar el uso de "==" e "===", el resultado de estas comparaciones es distinto ya que "==" compara si el `valor` es identico y "===" compara si este `valor` es identico y si la variable es la misma (Numérico, String, boolean...)
@@ -73,10 +73,10 @@ En este ejercicio declaró tres variables y procedo a compararlas entre ellas pa
 2. Si el número es mayor que 10, mostrar un mensaje indicando que es mayor. Si es menor, mostrar otro mensaje. Si es exactamente 10, mostrar un mensaje indicativo. (alert)
 
 #### Codigo
-![Foto del ejercicio 4](FotoEjer4)
+![Foto del ejercicio 4](https://github.com/Dvazalm/DAWEC/tree/50992cb3930944c24472ca7da30b37a359bcbe97/T1/SPRINT1/fotos/FotoEjer4.png)
 
 #### Gif
-![Gif del ejercicio 4](GirEjer4)
+![Gif del ejercicio 4](https://github.com/Dvazalm/DAWEC/tree/50992cb3930944c24472ca7da30b37a359bcbe97/T1/SPRINT1/fotos/GirEjer4.gif)
 ```
 En este ejercicio usamos el comando "prompt" para hacer que el usuario introduzca un valor. Una vez que obtenemos el valor que el usuario ha introducido lo comparamos para saber si es menor, mayor o igual a 10.
 En el caso de que sea igual a 10, la terminal nos dará un aviso de alerta
@@ -90,7 +90,7 @@ En el caso de que sea igual a 10, la terminal nos dará un aviso de alerta
 2. Modificar el bucle anterior para mostrar solo los números pares entre 1 y 10.
 
 
-![Foto del ejercicio 5](FotoEjer5)
+![Foto del ejercicio 5](https://github.com/Dvazalm/DAWEC/tree/50992cb3930944c24472ca7da30b37a359bcbe97/T1/SPRINT1/fotos/FotoEjer5.png)
 
 ```
 En este ejercicio hacemos uso del bucle "for" para imprimir por terminar los números del 1 al 10. 
