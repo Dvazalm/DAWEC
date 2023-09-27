@@ -50,7 +50,7 @@ En este ejercicio podemos observar como hago el uso del `var` para declarar vari
 
 2. Realiza y muestra en la consola las operaciones de suma, resta, multiplicación, división y módulo entre estas variables.
 
-![Foto del ejercicio 1](./fotos/FotoEjer2.PNG)
+![Foto del ejercicio 2](./fotos/FotoEjer2.PNG)
 
 En este ejercicio se puede comprobar como gracias al uso del `let`
 declaro varias variables para después proceder a hacer varios cálculos matemáticos con ellas.
@@ -65,7 +65,7 @@ declaro varias variables para después proceder a hacer varios cálculos matemá
 
 2. Utiliza operadores de comparación para comparar estas variables entre sí y muestra los resultados en la consola.
 
-![Foto del ejercicio 1](./fotos/FotoEjer3.PNG)
+![Foto del ejercicio 3](./fotos/FotoEjer3.PNG)
 
 
 En este ejercicio declaró tres variables y procedo a compararlas
@@ -82,10 +82,10 @@ es la misma (Numérico, String, boolean...)
 2. Si el número es mayor que 10, mostrar un mensaje indicando que es mayor. Si es menor, mostrar otro mensaje. Si es exactamente 10, mostrar un mensaje indicativo. (alert)
 
 #### Codigo
-![Foto del ejercicio 1](./fotos/FotoEjer4.PNG)
+![Foto del ejercicio 4](./fotos/FotoEjer4.PNG)
 
 #### Gif
-![Foto del ejercicio 1](./fotos/GifEjer4.GIF)
+![Gif del ejercicio 4](./fotos/GifEjer4.gif)
 
 En este ejercicio usamos el comando `prompt` para hacer que el usuario
 introduzca un valor. Una vez que obtenemos el valor que el usuario ha introducido lo comparamos para saber si es menor, mayor o igual a 10.
@@ -101,7 +101,7 @@ En el caso de que sea igual a 10, la terminal nos dará un aviso de alerta
 2. Modificar el bucle anterior para mostrar solo los números pares entre 1 y 10.
 
 
-![Foto del ejercicio 1](./fotos/FotoEjer5.PNG)
+![Foto del ejercicio 5](./fotos/FotoEjer5.PNG)
 
 En este ejercicio hacemos uso del bucle `for` para imprimir por terminar
 los números del 1 al 10. 
