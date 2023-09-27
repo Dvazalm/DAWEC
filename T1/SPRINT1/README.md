@@ -40,7 +40,7 @@ prueba.
 ![Foto del ejercicio 1](./fotos/FotoEjer1.PNG)
 
 
-En este ejercicio podemos observar como hago el uso del "var" para declarar varias variables y el uso del "console.log" para ponerlas en la terminal.
+En este ejercicio podemos observar como hago el uso del `var` para declarar varias variables y el uso del `console.log` para ponerlas en la terminal.
 
 
 ### 🔰 Ejercicio 2 - Operaciones Aritméticas
@@ -52,7 +52,7 @@ En este ejercicio podemos observar como hago el uso del "var" para declarar vari
 
 ![Foto del ejercicio 1](./fotos/FotoEjer2.PNG)
 
-En este ejercicio se puede comprobar como gracias al uso del "let"
+En este ejercicio se puede comprobar como gracias al uso del `let`
 declaro varias variables para después proceder a hacer varios cálculos matemáticos con ellas.
 
 
@@ -69,7 +69,7 @@ declaro varias variables para después proceder a hacer varios cálculos matemá
 
 
 En este ejercicio declaró tres variables y procedo a compararlas
-entre ellas para ver si son mayor o menor o igual. Hay que recalcar el uso de "==" e "===", el resultado de estas comparaciones es distinto ya que "==" compara si el `valor` es identico y "===" compara si este `valor` es identico y si la variable
+entre ellas para ver si son mayor o menor o igual. Hay que recalcar el uso de `==` e `===`, el resultado de estas comparaciones es distinto ya que `==` compara si el "valor" es identico y `===` compara si este "valor" es identico y si la variable
 es la misma (Numérico, String, boolean...)
 
 
@@ -87,7 +87,7 @@ es la misma (Numérico, String, boolean...)
 #### Gif
 ![Foto del ejercicio 1](./fotos/GifEjer4.GIF)
 
-En este ejercicio usamos el comando "prompt" para hacer que el usuario
+En este ejercicio usamos el comando `prompt` para hacer que el usuario
 introduzca un valor. Una vez que obtenemos el valor que el usuario ha introducido lo comparamos para saber si es menor, mayor o igual a 10.
 En el caso de que sea igual a 10, la terminal nos dará un aviso de alerta
 
@@ -103,8 +103,8 @@ En el caso de que sea igual a 10, la terminal nos dará un aviso de alerta
 
 ![Foto del ejercicio 1](./fotos/FotoEjer5.PNG)
 
-En este ejercicio hacemos uso del bucle "for" para imprimir por terminar
+En este ejercicio hacemos uso del bucle `for` para imprimir por terminar
 los números del 1 al 10. 
-A continuación vuelvo a usar este mismo bucle pero usando un "if" y "else"
+A continuación vuelvo a usar este mismo bucle pero usando un `if` y `else`
 para comparar cuáles son pares y cuáles no, y de esta manera únicamente imprimir los números pares.
 
