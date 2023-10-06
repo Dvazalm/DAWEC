@@ -1,0 +1,42 @@
+<head>
+    <style>
+        #boton{
+            margin-top: 100px;
+            padding: 10px 40px;
+            font-size: 12px;
+            box-shadow: rgba(0, 0, 0, 0.377) 2px 2px;
+        }
+        
+        #boton:active {
+            box-shadow: rgba(0, 0, 0, 0.377) 0px 0px;
+            transform: translate(1px, 1px);
+        }
+
+
+
+    </style>
+    <script>
+         function cambiarEstilo() {
+            // Generar un número aleatorio entre 0 y 255 para los componentes RGB
+            var red = Math.floor(Math.random() * 256);
+            var green = Math.floor(Math.random() * 256);
+            var blue = Math.floor(Math.random() * 256);
+
+            // Construir el color en formato RGB
+            var nuevoColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+
+            // Cambiar el color de fondo del botón
+            document.getElementById('body').style.backgroundColor = nuevoColor;
+        }
+
+
+
+    </script>
+</head>
+<body id="body">
+    <center>
+<button id="boton" onclick="cambiarEstilo()">
+    Cambiar color de fondo a uno aleatorio
+</button>
+    </center>
+</body>
