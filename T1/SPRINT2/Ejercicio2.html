@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Área</title>
+</head>
+<body>
+    <center>
+<div style="padding-top: 200px; font-size: 50px; font-family: Arial, Helvetica, sans-serif;">
+    <input type="number" id="ancho" placeholder="Ancho" style="height: 20px; font-size: 20px; color: blue;">
+    <input   type="number" id="alto" placeholder="Alto" style="height: 20px; font-size: 20px; color: green;">
+    <button onclick="calcularArea()">Calcular Área</button>
+<p id="resultado"></p>
+</div>
+    </center>
+
+<script>
+
+  function calcularArea() {
+    // Obtener valores de los campos de entrada
+    const ancho = document.getElementById('ancho').value;
+    const alto = document.getElementById('alto').value;
+
+    // Calcular el área
+    const area = ancho * alto;
+
+    // Mostrar el resultado en el párrafo
+    if(ancho == alto){
+        document.getElementById('resultado').innerHTML = `Área: <b style='color:red;'>${area}</b> <br> La figura es un <b style='color:royalblue;'>cuadrado</> `;
+    }else{
+    document.getElementById('resultado').innerHTML = `Área: <b style='color:red;'>${area}</b> <br> La figura es un <b style='color:purple;'>rectangulo</> `;
+    }
+  }
+</script>
+
+</body>
+</html>
