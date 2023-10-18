@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover y Estilo Dinámico</title>
+  <style>
+    .caja {
+      margin: 100px 5px;
+      padding: 20px 50px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      display: inline-block;
+      transition: all 0.5s;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .caja:hover {
+      background-color: blue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<center>
+    <div class="caja" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">Esto es</div>
+    <div class="caja" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">mucho más facil</div>
+    <div class="caja" onmouseover="cambiarEstilos(this)" onmouseout="restaurarEstilos(this)">con un :hover 😀</div>
+</center>
+
+<script>
+  function cambiarEstilos(elemento) {
+    elemento.style.backgroundColor = 'blue';
+    elemento.style.color = 'white';
+  }
+
+  function restaurarEstilos(elemento) {
+    elemento.style.backgroundColor = '';
+    elemento.style.color = '';
+  }
+</script>
+
+</body>
+</html>
