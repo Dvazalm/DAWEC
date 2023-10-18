@@ -40,11 +40,12 @@ prueba.
 En este ejercicio podemos observar como hago el uso de `{Math.floor(Math.random() * 256)}` para seleccionar un color aleatorio dentro del RGB y como uso el `document.*` para editar el **body** del HTML.
 
 
+
 ### 🔰 Ejercicio 2 - Calculadora de Área
 -> Objetivo: Introducción al manejo de eventos y manipulación de elementos HTML.
 
-1. Descripción del Ejercicio: Diseñar una página web con dos campos de entrada (input) para introducir el ancho y el alto de un rectángulo.
-2. Acción al Clic del Botón: Al hacer clic en el botón etiquetado "Calcular Área", se calcula el área del rectángulo y se muestra el resultado en un elemento <p> en la página.
+1. Diseñar una página web con dos campos de entrada (input) para introducir el ancho y el alto de un rectángulo.
+2. Al hacer clic en el botón etiquetado "Calcular Área", se calcula el área del rectángulo y se muestra el resultado en un elemento <p> en la página.
 
 ![Foto del ejercicio 2](./fotos/FotoEjer2.PNG)
 
@@ -53,4 +54,12 @@ Tambien podemos ver como es capaz de diferenciar entre un **cuadrado** y un **re
 
 
 
+### 🔰 Ejercicio 3 - Listado Dinámico
+-> Objetivo: Practicar la manipulación dinámica de listas en HTML.
 
+1. Crear una página con un campo de entrada y un botón etiquetado "Añadir a la lista".
+2. Cuando el usuario escribe algo en el campo de entrada y hace clic en el botón, el contenido del campo se agrega como un nuevo ítem (<li>) a la lista.
+
+![Foto del ejercicio 3](./fotos/FotoEjer3.PNG)
+
+Este ejercicio observamos como al agregar algun dato y pulsar el bóton, el elemento se añade a la lista con un `document.createElement('li')`, tambien podemos observar que si no hay ningun elemento en el **input **, aparece un aviso.
