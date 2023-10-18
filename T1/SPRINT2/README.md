@@ -45,7 +45,7 @@ En este ejercicio podemos observar como hago el uso de `{Math.floor(Math.random(
 -> Objetivo: Introducción al manejo de eventos y manipulación de elementos HTML.
 
 1. Diseñar una página web con dos campos de entrada (input) para introducir el ancho y el alto de un rectángulo.
-2. Al hacer clic en el botón etiquetado "Calcular Área", se calcula el área del rectánguloy se muestra el resultado en un elemento <p> en la página.
+2. Al hacer clic en el botón etiquetado "Calcular Área", se calcula el área del rectánguloy se muestra el resultado en un elemento `<p>` en la página.
 
 ![Foto del ejercicio 2](./fotos/GifEjer2.gif)
 
