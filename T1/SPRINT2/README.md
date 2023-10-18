@@ -26,7 +26,7 @@ componentes.
 En este apartado voy a implementar todos los apartados anteriores, a hacer los ejercicios al completo y los gifs de cada
 prueba.
 
-![Fichero con las actividades en formato HTML](./fotos/Captura1.PNG)
+![Fichero con las actividades en formato HTML](./fotos/GifEjer1.GIF)
 
 
 ### 🔰 Ejercicio 1 -  Cambio de Color con Botón
