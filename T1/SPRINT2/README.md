@@ -27,3 +27,15 @@ En este apartado voy a implementar todos los apartados anteriores, a hacer los e
 prueba.
 
 ![Fichero con las actividades en formato HTML](./fotos/Captura1.PNG)
+
+
+### 🔰 Ejercicio 1 -  Cambio de Color con Botón
+-> Objetivo: Familiarizarse con el uso de botones y scripts.
+
+1. Crear una página web que contenga un botón etiquetado "Cambiar color".
+2. Al hacer clic en el botón, el color de fondo de la página debe cambiar a un color aleatorio.
+3- Pista: Utiliza `Math.random()` para generar valores RGB aleatorios.
+
+![Foto del ejercicio 1](./fotos/FotoEjer1.PNG)
+
+En este ejercicio podemos observar como hago el uso de `{Math.floor(Math.random() * 256)}` para seleccionar un color aleatorio dentro del RGB y como uso el `document.*` para editar el **body** del HTML.
