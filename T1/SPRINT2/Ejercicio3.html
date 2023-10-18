@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado Dinámico</title>
+</head>
+<body>
+ <center>
+<div >
+    <p id="aviso" style="color: transparent; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 50px;">NO SE ESCRITO NADA</p>
+
+    <input type="text" id="nuevoElemento" placeholder="Nuevo ítem" style="height: 20px; font-size: 20px;">
+    <button onclick="agregarElemento()" style="padding: 20px 30px;">Añadir a la lista</button>
+
+   
+<ul id="lista" style="list-style: none; font-size: 30px; font-family: Arial, Helvetica, sans-serif;"></ul>
+</div>
+</center>
+
+<script>
+  function agregarElemento() {
+    // Obtener el valor del campo de entrada
+    const nuevoItem = document.getElementById('nuevoElemento').value;
+
+    if(nuevoItem != ""){
+        document.getElementById('aviso').style.color = "transparent";
+    // Crear un nuevo elemento de lista
+    const li = document.createElement('li');
+    li.textContent = nuevoItem;
+
+    // Agregar el elemento a la lista
+    document.getElementById('lista').appendChild(li);
+
+    // Limpiar el campo de entrada
+    document.getElementById('nuevoElemento').value = '';
+    }else{
+        document.getElementById('aviso').style.color = "red";
+    }
+
+  }
+</script>
+
+</body>
+</html>
