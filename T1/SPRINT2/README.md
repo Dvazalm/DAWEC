@@ -63,3 +63,16 @@ Tambien podemos ver como es capaz de diferenciar entre un **cuadrado** y un **re
 ![Foto del ejercicio 3](./fotos/FotoEjer3.PNG)
 
 Este ejercicio observamos como al agregar algun dato y pulsar el bóton, el elemento se añade a la lista con un `document.createElement('li')`, tambien podemos observar que si no hay ningun elemento en el **input **, aparece un aviso.
+
+### 🔰 Ejercicio 4 - Hover y Estilo Dinámico
+-> Objetivo: Experimentar con eventos de ratón y cambios dinámicos de estilos.
+
+1. Diseñar una página con varios elementos div, cada uno con un texto diferente.
+2. Al pasar el ratón sobre un div, cambiar su color de fondo a azul y el texto a blanco.
+3. Al mover el ratón fuera del div, restaurar sus estilos originales.
+
+![Foto del ejercicio 4](./fotos/FotoEjer4.PNG)
+
+En este ejercicio paso el ratón por encima de cada bloque para ver como cambian de color.
+
+
