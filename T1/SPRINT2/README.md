@@ -2,22 +2,22 @@
 ```
 -> Se requiere realizar los siguientes ejercicios:
 
-    ◽ Ejercicio 1: Declaración y Tipos de Datos
+    ◽ Ejercicio 1: Cambio de Color con Botón
 
-    ◽ Ejercicio 2: Operaciones Aritméticas
+    ◽ Ejercicio 2: Calculadora de Área
 
-    ◽ Ejercicio 3: Comparaciones
+    ◽ Ejercicio 3:  Listado Dinámico
 
-    ◽ Ejercicio 4: Estructuras Condicionales
+    ◽ Ejercicio 4: Hover y Estilo Dinámico
 
-    ◽ Ejercicio 5: Bucles
+    ◽ Ejercicio 5: Detección de Clics y Generación de XPath
 
 
 ```
 
 
 ## 🤓 Diseño de la solución
-Para realizar este apartado de Tarea AVANZADA, lo primero que he hecho es ver el vídeo del profesor y ponerme a hacer correctamente los
+Para realizar este apartado de Tarea AVANZADA, lo primero que he hecho es leer el Boletín de Ejercicios y ponerme a hacer correctamente los
 componentes.
 
 
