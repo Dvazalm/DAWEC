@@ -58,7 +58,7 @@ Tambien podemos ver como es capaz de diferenciar entre un **cuadrado** y un **re
 -> Objetivo: Practicar la manipulación dinámica de listas en HTML.
 
 1. Crear una página con un campo de entrada y un botón etiquetado "Añadir a la lista".
-2. Cuando el usuario escribe algo en el campo de entrada y hace clic en el botón, el contenido del campo se agrega como un nuevo ítem `(<li>)` a la lista.
+2. Cuando el usuario escribe algo en el campo de entrada y hace clic en el botón, el contenido del campo se agrega como un nuevo ítem `<li>` a la lista.
 
 ![Foto del ejercicio 3](./fotos/GifEjer3.gif)
 
