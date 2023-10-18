@@ -34,6 +34,7 @@ prueba.
 
 1. Crear una página web que contenga un botón etiquetado "Cambiar color".
 2. Al hacer clic en el botón, el color de fondo de la página debe cambiar a un color aleatorio.
+
 ![Foto del Test Plan del ejercicio 1](./fotos/test1.PNG)
 
 ![Foto del ejercicio 1](./fotos/GifEjer1.gif)
@@ -47,6 +48,7 @@ En este ejercicio podemos observar como hago el uso de `{Math.floor(Math.random(
 
 1. Diseñar una página web con dos campos de entrada (input) para introducir el ancho y el alto de un rectángulo.
 2. Al hacer clic en el botón etiquetado "Calcular Área", se calcula el área del rectánguloy se muestra el resultado en un elemento `<p>` en la página.
+
 ![Foto del Test Plan del ejercicio 2](./fotos/test2.PNG)
 
 ![Foto del ejercicio 2](./fotos/GifEjer2.gif)
@@ -61,6 +63,7 @@ Tambien podemos ver como es capaz de diferenciar entre un **cuadrado** y un **re
 
 1. Crear una página con un campo de entrada y un botón etiquetado "Añadir a la lista".
 2. Cuando el usuario escribe algo en el campo de entrada y hace clic en el botón, el contenido del campo se agrega como un nuevo ítem `<li>` a la lista.
+
 ![Foto del Test Plan del ejercicio 3](./fotos/test3.PNG)
 
 ![Foto del ejercicio 3](./fotos/GifEjer3.gif)
@@ -73,6 +76,7 @@ Este ejercicio observamos como al agregar algun dato y pulsar el bóton, el elem
 1. Diseñar una página con varios elementos div, cada uno con un texto diferente.
 2. Al pasar el ratón sobre un div, cambiar su color de fondo a azul y el texto a blanco.
 3. Al mover el ratón fuera del div, restaurar sus estilos originales.
+
 ![Foto del Test Plan del ejercicio 4](./fotos/test4.PNG)
 
 ![Foto del ejercicio 4](./fotos/GifEjer4.gif)
