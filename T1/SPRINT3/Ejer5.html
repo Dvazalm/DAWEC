@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<table id="personas">
+    <thead>
+        <tr>
+            <th onclick="ordenarTabla('Nombre')">Nombre</th>
+            <th onclick="ordenarTabla('Edad')">Edad</th>
+            <th onclick="ordenarTabla('DNI')">DNI</th>
+            <th onclick="ordenarTabla('Tiene/No tiene hijos')">Tiene/No tiene hijos</th>
+            <th onclick="ordenarTabla('Fecha de nacimiento')">Fecha de nacimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script>
+var tabla = [
+    {
+        Nombre: "Ana",
+        Edad: 25,
+        DNI: "45678912B",
+        "Tiene/No tiene hijos": "Tiene",
+        "Fecha de nacimiento": "12/05/1998"
+    },
+    {
+        Nombre: "Carlos",
+        Edad: 30,
+        DNI: "12345678A",
+        "Tiene/No tiene hijos": "No tiene",
+        "Fecha de nacimiento": "05/02/1993"
+    },
+    {
+        Nombre: "Berta",
+        Edad: 28,
+        DNI: "98765432C",
+        "Tiene/No tiene hijos": "Tiene",
+        "Fecha de nacimiento": "20/03/1995"
+    },
+    {
+        Nombre: "David",
+        Edad: 31,
+        DNI: "11223344D",
+        "Tiene/No tiene hijos": "Tiene",
+        "Fecha de nacimiento": "18/08/1992"
+    },
+];
+
+
+
+
+// Variable para mantener el estado de ordenamiento
+var ordenAscendente = true;
+var columnaOrdenada = null;
+
+
+
+// Añadir datos a la tabla
+
+function generarTabla(data) {
+    var tableBody = document.querySelector("#personas tbody");
+    tableBody.innerHTML = '';
+
+    data.forEach(function(persona) {
+        var row = document.createElement('tr');
+        for (var key in persona) {
+            var cell = document.createElement('td');
+            cell.textContent = persona[key];
+            row.appendChild(cell);
+        }
+        tableBody.appendChild(row);
+    });
+}
+
+
+// ordenar datos de la tabla
+
+function ordenarTabla(columna) {
+    if (columna === columnaOrdenada) {
+        ordenAscendente = !ordenAscendente;
+    } else {
+        columnaOrdenada = columna;
+        ordenAscendente = true;
+    }
+
+    tabla.sort(function(a, b) {
+        var valorA = a[columna];
+        var valorB = b[columna];
+        
+        if (columna === "Fecha de nacimiento") {
+            valorA = new Date(valorA.split("/").reverse().join("-"));
+            valorB = new Date(valorB.split("/").reverse().join("-"));
+        }
+
+        if (valorA < valorB) {
+            return ordenAscendente ? -1 : 1;
+        } else if (valorA > valorB) {
+            return ordenAscendente ? 1 : -1;
+        } else {
+            return 0;
+        }
+    });
+
+    generarTabla(tabla);
+}
+
+// Ejecutar funcion
+generarTabla(tabla);
+</script>
+
+</body>
+</html>
