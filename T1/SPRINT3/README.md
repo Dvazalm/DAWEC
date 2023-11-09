@@ -6,14 +6,13 @@
 
     ◽ Ejercicio 2: Transposición de matrices
 
-    ◽ Ejercicio 3:  Fusión de objetos sin duplicados
+    ◽ Ejercicio 3: Fusión de objetos sin duplicados
 
     ◽ Ejercicio 4: Cadena más larga en un array
 
-
     ◽ Ejercicio 5: Ordenamiento interactivo de tabla de personas
 
-
+    ◽ Ejercicio 6: Análisis y Transformación Avanzada de Datos
 
 
 ```
@@ -43,4 +42,6 @@ prueba.
 ![Foto del ejercicio 1](./fotos/GifEjer1.gif)
 
 En este ejercicio podemos observar como hago el uso de `{Math.floor(Math.random() * 256)}` para seleccionar un color aleatorio dentro del RGB y como uso el `document.*` para editar el **body** del HTML.
+
+
 
