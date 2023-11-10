@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta Pokémon</title>
+</head>
+<body>
+  <h1>Consulta Pokémon</h1>
+  
+  <label for="pokemonInput">Ingrese nombre o ID del Pokémon:</label>
+  <input type="text" id="pokemonInput">
+  <button onclick="buscarPokemon()">Buscar</button>
+  
+  <div id="resultado"></div>
+  
+  <script>
+    async function buscarPokemon() {
+      const pokemonInput = document.getElementById('pokemonInput').value.toLowerCase();
+      const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}/`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const speciesUrl = data.species.url;
+
+        const speciesResponse = await fetch(speciesUrl);
+        const speciesData = await speciesResponse.json();
+        const evolutionChainUrl = speciesData.evolution_chain.url;
+
+        const evolutionChainResponse = await fetch(evolutionChainUrl);
+        const evolutionChainData = await evolutionChainResponse.json();
+
+        const chain = [];
+        let evolutionDetails = evolutionChainData.chain;
+        while (evolutionDetails) {
+          const speciesDetails = await getPokemonDetails(evolutionDetails.species.name);
+          chain.push({
+            speciesName: evolutionDetails.species.name,
+            abilities: await getPokemonAbilities(evolutionDetails.species.name),
+            image: speciesDetails.sprites.front_default
+          });
+          evolutionDetails = evolutionDetails.evolves_to[0];
+        }
+
+        const resultado = document.getElementById('resultado');
+        resultado.innerHTML = `<h2>Cadena de Evolución de ${pokemonInput}</h2>`;
+        chain.forEach(pokemon => {
+          resultado.innerHTML += `
+            <h3>${pokemon.speciesName}</h3>
+            <img src="${pokemon.image}" alt="${pokemon.speciesName}"><br>
+            <p><strong>Habilidades:</strong> ${pokemon.abilities.join(', ')}</p>
+          `;
+        });
+      } catch (error) {
+        console.error('Error:', error);
+        const resultado = document.getElementById('resultado');
+        resultado.innerHTML = '¡Pokemon no encontrado!';
+      }
+    }
+
+    async function getPokemonAbilities(pokemonName) {
+      const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+      const pokemonData = await pokemonResponse.json();
+      const abilities = pokemonData.abilities.map(ability => ability.ability.name);
+      return abilities;
+    }
+
+    async function getPokemonDetails(pokemonName) {
+      const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+      const pokemonData = await pokemonResponse.json();
+      return pokemonData;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparativa de Pokémon</title>
+</head>
+<body>
+    <h1>Comparativa de Pokémon</h1>
+    <input type="text" id="pokemon1" placeholder="Primer Pokémon">
+    <input type="text" id="pokemon2" placeholder="Segundo Pokémon">
+    <button onclick="comparePokemon()">Comparar Pokémon</button>
+    <div id="comparisonResults"></div>
+
+    <script>
+        async function getPokemonStats(pokemonName) {
+            try {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+                if (response.ok) {
+                    const pokemon = await response.json();
+                    const stats = pokemon.stats.map(stat => ({
+                        name: stat.stat.name,
+                        value: stat.base_stat
+                    }));
+                    return {
+                        name: pokemon.name,
+                        stats: stats
+                    };
+                } else {
+                    throw new Error('El Pokémon no pudo ser encontrado');
+                }
+            } catch (error) {
+                throw new Error('Error al obtener estadísticas del Pokémon');
+            }
+        }
+
+        async function comparePokemon() {
+            const pokemonName1 = document.getElementById('pokemon1').value.toLowerCase();
+            const pokemonName2 = document.getElementById('pokemon2').value.toLowerCase();
+            const comparisonResults = document.getElementById('comparisonResults');
+
+            try {
+                const statsPokemon1 = await getPokemonStats(pokemonName1);
+                const statsPokemon2 = await getPokemonStats(pokemonName2);
+
+                let totalStats1 = statsPokemon1.stats.reduce((acc, stat) => acc + stat.value, 0);
+                let totalStats2 = statsPokemon2.stats.reduce((acc, stat) => acc + stat.value, 0);
+
+                comparisonResults.innerHTML = `
+                    <h2>Comparativa de Pokémon</h2>
+                    <h3>${statsPokemon1.name} vs ${statsPokemon2.name}</h3>
+                    <table border="1">
+                        <tr>
+                            <th>${statsPokemon1.name}</th>
+                            <th>${statsPokemon2.name}</th>
+                        </tr>
+                        ${statsPokemon1.stats.map((stat, index) => `
+                            <tr>
+                                <td>${stat.name}: ${stat.value}</td>
+                                <td>${statsPokemon2.stats[index].name}: ${statsPokemon2.stats[index].value}</td>
+                            </tr>
+                        `).join('')}
+                        <tr>
+                            <td>Total Estadísticas: ${totalStats1}</td>
+                            <td>Total Estadísticas: ${totalStats2}</td>
+                        </tr>
+                    </table>
+                `;
+            } catch (error) {
+                comparisonResults.innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

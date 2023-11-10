@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Obtener información de un Pokémon</title>
+</head>
+<body>
+    <h1>Información de Pokémon</h1>
+    <input type="text" id="pokemonName" placeholder="Nombre del Pokémon">
+    <button onclick="getPokemonInfo()">Obtener información</button>
+    <div id="pokemonInfo"></div>
+
+    <script>
+        async function getPokemonInfo() {
+            const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
+            const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    const pokemon = await response.json();
+                    const pokemonInfo = document.getElementById('pokemonInfo');
+
+                    pokemonInfo.innerHTML = `
+                        <p>Nombre: ${pokemon.name}</p>
+                        <p>ID: ${pokemon.id}</p>
+                        <p>Tipos: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
+                        <img src="${pokemon.sprites.front_default}" alt="Imagen de ${pokemon.name}">
+                    `;
+                } else if (response.status === 404) {
+                    document.getElementById('pokemonInfo').innerHTML = 'El Pokémon no existe.';
+                } else {
+                    throw new Error('Hubo un problema al obtener la información del Pokémon');
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
