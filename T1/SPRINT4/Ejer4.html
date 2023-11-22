@@ -1,0 +1,712 @@
+<!--
+        Esto es un Software de código abierto, el propietario de este archivo se hace responsable del uso que le de.
+        Como recordatorio, la difusión de medio de pirateria es ilegal, con esta web no se pretende promover este tipo de pompotamiento.
+        Esta web esta creada par aun uso educativo e investigación sobre clips y datos de peliculas.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineCasa</title>
+    <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .movie-card {
+            display: inline-block;
+            width: calc(33.33% - 20px);
+            margin-right: 20px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            vertical-align: top;
+            border: 2px solid #f4000089;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-color: rgb(224, 220, 220);
+            position: relative;
+            height: 538px;
+        }
+
+        .movie-card img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.5s ease;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filters {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #340d0d;
+            padding: 10px;
+            border-radius: 100px;
+
+        }
+
+        .filters label {
+            margin-right: 10px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .seleccionador {
+            margin-right: 20px;
+
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 20px;
+            display: none;
+            transition: background-color 0.3s;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .back-to-top:hover {
+            background-color: #0056b3;
+        }
+
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .pagination li {
+            margin-right: 5px;
+            cursor: pointer;
+            font-size: 25px;
+        }
+
+        .pagination li b {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .pagination li:first-child::before {
+            content: "";
+        }
+
+        .pagination li:last-child::after {
+            content: "";
+        }
+
+        .go-to-page {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .go-to-page input {
+            width: 50px;
+            padding: 10px 15px;
+            margin-right: 5px;
+            font-size: 15px;
+        }
+
+        .go-to-page button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .load-more-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .load-more-button button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 25%;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .modal img {
+            width: 100%;
+            height: auto;
+        }
+
+        .modal-content p {
+            color: white;
+        }
+
+        .close {
+            color: white;
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close-square {
+            color: transparent;
+            position: fixed;
+            scale: 2;
+            right: 10px;
+            top: 0%;
+            background-color: transparent;
+            width: 16.35%;
+            height: 100%;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+
+        .close-square:hover,
+        .close-square:focus {
+            text-decoration: none;
+            cursor: default;
+        }
+
+
+        .close-square2 {
+            color: transparent;
+            position: fixed;
+            scale: 2;
+            top: 0%;
+            height: 100%;
+            left: 0px;
+            background-color: transparent;
+            width: 16.7%;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .close-square2:hover,
+        .close-square2:focus {
+            text-decoration: none;
+            cursor: default;
+        }
+
+
+        .movie-card-content {
+            color: white;
+            text-align: justify;
+        }
+
+        .movie-card-content h2 {
+            color: red;
+            text-align: center;
+        }
+
+        .movie-card-content strong {
+            color: rgb(241, 66, 66);
+        }
+
+        .imgPelicula {
+            width: 400px;
+        }
+
+        .imgPais {
+            max-width: 40px;
+            vertical-align: middle;
+        }
+
+        .search-bar label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .enlacePeli {
+            color: red;
+            margin: 10px;
+        }
+
+        .enlacePeli:hover {
+            color: rgb(162, 0, 0);
+            margin: 10px;
+        }
+
+        .titulo{
+            font-family: 'Courier New', Courier, monospace;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            margin: 20px 0;
+    
+          
+            padding: 10px 30px;
+       
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1><a href="./Ejer4.html" class="titulo">CineCasa</a></h1>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-bar">
+            <label for="movieSearch">Buscar por nombre:</label>
+            <input type="text" id="movieSearch" placeholder="Nombre de la película">
+        </div>
+
+        <!-- Filtros -->
+        <div class="filters">
+            <label for="sortBy">Ordenar por:</label>
+            <select id="sortBy" class="seleccionador" onchange="sortMovies()">
+                <option value="popularity">Cualquier puntuación</option>
+                <option value="popularity.desc">Alta puntuación</option>
+                <option value="popularity.asc">Baja puntuación</option>
+            </select>
+
+            <label for="languageFilter">Filtrar por país:</label>
+            <select id="languageFilter" class="seleccionador" onchange="filterByLanguage()">
+                <option value="">Cualquier idioma</option>
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+            </select>
+
+            <label for="genreFilter">Filtrar por género:</label>
+            <select id="genreFilter" class="seleccionador" onchange="filterByGenre()">
+                <option value="">Cualquier género</option>
+                <!-- Opciones de género se agregarán dinámicamente después de cargar la página -->
+            </select>
+        </div>
+
+        <!-- Resultados de Búsqueda -->
+        <div id="results" class="movie-cards"></div>
+
+        <!-- Modal para mostrar la información de la película -->
+        <div id="movieModal" class="modal">
+            <span class="close-square" onclick="closeModal()">&square;</span>
+            <span class="close-square2" onclick="closeModal()">&square;</span>
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+
+        <!-- Botón para volver arriba -->
+        <div class="back-to-top" onclick="scrollToTop()">↑</div>
+
+        <!-- Load more button -->
+        <div class="load-more-button" id="loadMoreBtn">
+            <button onclick="loadMoreMovies()">Cargar más</button>
+        </div>
+    </div>
+
+    <script>
+        let blockNumber = 1;
+        let currentSortBy = '';
+        let currentPage = 1;
+        let currentLanguageFilter = '';
+        let allMovies = []; // Lista para almacenar todas las películas cargadas
+
+        async function getMovieData(apiKey, block, sortBy, language = 'es') {
+            const moviesPerPage = 18;
+            const startItem = (block - 1) * moviesPerPage + 1;
+            const endItem = block * moviesPerPage;
+
+            const apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=${sortBy}&vote_count.gte=1&language=${language}&page=${block}&with_original_language=${language}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                return data.results.slice(startItem - 1, endItem);
+            } catch (error) {
+                console.error('Error al obtener datos de la API:', error);
+                return [];
+            }
+        }
+
+        async function renderMovies(sortBy, language = 'es') {
+            const resultsContainer = document.getElementById('results');
+            const apiKey = 'e7b7df94caef126846b78224f44091fa';
+
+            const movies = await getMovieData(apiKey, blockNumber, sortBy, language);
+
+            movies.forEach((movie) => {
+                allMovies.push(movie); // Agregar la película a la lista global
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                let puntuacionClass = '';
+
+                movieCard.innerHTML = `
+                    <img class="imgPelicula" src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
+                `;
+                movieCard.onclick = function () {
+                    openModal(movie);
+                };
+                resultsContainer.appendChild(movieCard);
+            });
+        }
+
+        async function loadMoreMovies() {
+            currentPage++;
+            const resultsContainer = document.getElementById('results');
+            const apiKey = 'e7b7df94caef126846b78224f44091fa';
+
+            try {
+                const apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=${currentSortBy}&vote_count.gte=1&language=${currentLanguageFilter}&page=${currentPage}&with_original_language=${currentLanguageFilter}`;
+
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.results.length === 0) {
+                    // No hay más resultados, puedes desactivar el botón o mostrar un mensaje
+                    document.getElementById('loadMoreBtn').style.display = 'none';
+                } else {
+                    data.results.forEach((movie) => {
+                        allMovies.push(movie); // Agregar la película a la lista global
+                        const movieCard = document.createElement('div');
+                        movieCard.className = 'movie-card';
+                        let puntuacionClass = '';
+
+                        movieCard.innerHTML = `
+                            <img class="imgPelicula" src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
+                        `;
+                        movieCard.onclick = function () {
+                            openModal(movie);
+                        };
+                        resultsContainer.appendChild(movieCard);
+                    });
+                }
+            } catch (error) {
+                console.error('Error al obtener datos de la API:', error);
+                resultsContainer.innerHTML = '<p>Error al cargar más películas.</p>';
+            }
+        }
+
+        async function searchMovies() {
+            const resultsContainer = document.getElementById('results');
+            const apiKey = 'e7b7df94caef126846b78224f44091fa';
+            const searchQuery = document.getElementById('movieSearch').value.trim();
+
+            if (!searchQuery) {
+                // Si el campo de búsqueda está vacío, no hacer nada
+                return;
+            }
+
+            try {
+                const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=es&query=${searchQuery}`;
+
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                // Limpiar resultados anteriores
+                resultsContainer.innerHTML = '';
+
+                if (data.results.length === 0) {
+                    resultsContainer.innerHTML = '<p>No se encontraron resultados.</p>';
+                } else {
+                    data.results.forEach((movie) => {
+                        allMovies.push(movie); // Agregar la película a la lista global
+                        const movieCard = document.createElement('div');
+                        movieCard.className = 'movie-card';
+                        let puntuacionClass = '';
+
+                        movieCard.innerHTML = `
+                            <img class="imgPelicula" src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
+                        `;
+                        movieCard.onclick = function () {
+                            openModal(movie);
+                        };
+                        resultsContainer.appendChild(movieCard);
+                    });
+                }
+            } catch (error) {
+                console.error('Error al obtener datos de la API:', error);
+                resultsContainer.innerHTML = '<p>Error al buscar películas.</p>';
+            }
+        }
+
+        function sortMovies() {
+            const sortBySelect = document.getElementById('sortBy');
+            const selectedSortBy = sortBySelect.value;
+
+            // Limpiar resultados anteriores
+            document.getElementById('results').innerHTML = '';
+            blockNumber = 1;
+            currentPage = 1;
+
+            currentSortBy = selectedSortBy;
+            renderMovies(currentSortBy, currentLanguageFilter);
+        }
+
+        function filterByLanguage() {
+            const languageFilterSelect = document.getElementById('languageFilter');
+            const selectedLanguage = languageFilterSelect.value;
+
+            // Limpiar resultados anteriores
+            document.getElementById('results').innerHTML = '';
+            blockNumber = 1;
+            currentPage = 1;
+
+            currentLanguageFilter = selectedLanguage;
+            renderMovies(currentSortBy, currentLanguageFilter);
+        }
+
+        function toggleHeart(button) {
+            button.classList.toggle('heart-active');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function openModal(movie) {
+            const modalContent = document.getElementById('modalContent');
+            const nombrePeliculaConGuiones = movie.title.replace(/ /g, '-'); // Reemplazar espacios por guiones
+
+            modalContent.innerHTML = `
+                <center><img class="imgPelicula" src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}" style="max-width: 250px;"></center>
+                <div class="movie-card-content">
+                    <h2>${movie.title}</h2>
+                    
+                    <p><strong>Año:</strong> ${movie.release_date}</p>
+                    <p><strong>Resumen:</strong> ${movie.overview}</p>
+                    <p class="puntuacion"><strong>Puntuación:</strong> ${movie.vote_average}</p>
+                    <p><strong>País de origen:</strong> <img class="imgPais" src="https://flagcdn.com/w80/${movie.original_language === 'en' ? 'us' : movie.original_language}.png" srcset="https://flagcdn.com/w80/${movie.original_language === 'en' ? 'us' : movie.original_language}.png 2x" width="60" height="50"></p>
+                    <p><strong>Idioma Original:</strong> ${movie.original_language}</p>
+                
+                    <p><strong>Géneros:</strong> ${getGenresString(movie.genre_ids)}</p>
+                    <hr>
+                    <p><strong>Saber más sobre peliculas:</strong></p>
+                    <center>
+                        <p>
+                            <a target="_blank" class="enlacePeli" href="https://www.justwatch.com/es/pelicula/${nombrePeliculaConGuiones}">Plataformas</a> 
+                        </p>
+                    </center>
+                </div>
+            `;
+
+            const modal = document.getElementById('movieModal');
+            modal.style.display = 'block';
+        }
+
+        function getGenresString(genreIds) {
+            const genreMap = {
+                28: 'Action',
+                12: 'Adventure',
+                16: 'Animation',
+                35: 'Comedy',
+                80: 'Crime',
+                99: 'Documentary',
+                18: 'Drama',
+                10751: 'Family',
+                14: 'Fantasy',
+                36: 'History',
+                27: 'Horror',
+                10402: 'Music',
+                9648: 'Mystery',
+                10749: 'Romance',
+                878: 'Science Fiction',
+                10770: 'TV Movie',
+                53: 'Thriller',
+                10752: 'War',
+                37: 'Western'
+            };
+
+            return genreIds.map(id => genreMap[id]).join(', ');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('movieModal');
+            modal.style.display = 'none';
+        }
+
+        // Agregar evento de desplazamiento para cargar automáticamente más películas
+        window.addEventListener('scroll', () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+                loadMoreMovies();
+            }
+        });
+
+        // Agregar evento para búsqueda en tiempo real
+        document.getElementById('movieSearch').addEventListener('input', searchMovies);
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const defaultSortBy = 'popularity.desc';
+            await renderMovies(defaultSortBy);
+        });
+
+        async function getGenres(apiKey) {
+            const apiUrl = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=es`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                return data.genres;
+            } catch (error) {
+                console.error('Error al obtener la lista de géneros:', error);
+                return [];
+            }
+        }
+
+        // Función para renderizar las opciones de género en el menú desplegable
+        async function renderGenres(apiKey) {
+            const genreFilterSelect = document.getElementById('genreFilter');
+            const genres = await getGenres(apiKey);
+
+            genres.forEach((genre) => {
+                const option = document.createElement('option');
+                option.value = genre.id;
+                option.textContent = genre.name;
+                genreFilterSelect.appendChild(option);
+            });
+        }
+
+        // Llamar a la función para renderizar las opciones de género al cargar la página
+        renderGenres('e7b7df94caef126846b78224f44091fa');
+
+
+        ///////////////////////////////FILTRO GENRERO///////////////
+
+
+
+
+
+        async function renderMovies(sortBy, language = 'es', genre = '') {
+            const resultsContainer = document.getElementById('results');
+            const apiKey = 'e7b7df94caef126846b78224f44091fa';
+
+            const movies = await getMovieData(apiKey, blockNumber, sortBy, language, genre);
+
+            movies.forEach((movie) => {
+                allMovies.push(movie);
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                let puntuacionClass = '';
+
+                movieCard.innerHTML = `
+            <img class="imgPelicula" src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
+        `;
+                movieCard.onclick = function () {
+                    openModal(movie);
+                };
+                resultsContainer.appendChild(movieCard);
+            });
+        }
+
+        // Modificar la función getMovieData para incluir el parámetro de género
+        async function getMovieData(apiKey, block, sortBy, language = 'es', genre = '') {
+            const moviesPerPage = 18;
+            const startItem = (block - 1) * moviesPerPage + 1;
+            const endItem = block * moviesPerPage;
+
+            // Incluir el filtro de género en la URL de la API
+            const apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=${sortBy}&vote_count.gte=1&language=${language}&page=${block}&with_original_language=${language}&with_genres=${genre}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                return data.results.slice(startItem - 1, endItem);
+            } catch (error) {
+                console.error('Error al obtener datos de la API:', error);
+                return [];
+            }
+        }
+
+        // Modificar la función filterByGenre para aplicar el filtro de género
+        function filterByGenre() {
+            const genreFilterSelect = document.getElementById('genreFilter');
+            const selectedGenre = genreFilterSelect.value;
+
+            // Limpiar resultados anteriores
+            document.getElementById('results').innerHTML = '';
+            blockNumber = 1;
+            currentPage = 1;
+
+            // Actualizar la lista de películas según el género seleccionado
+            renderMovies(currentSortBy, currentLanguageFilter, selectedGenre);
+        }
+
+
+    </script>
+</body>
+
+</html>
