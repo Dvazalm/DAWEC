@@ -56,13 +56,13 @@ prueba.
 ![Foto del Test Plan del ejercicio 4](./fotos/test4.1.PNG)
 ![Foto del Test Plan del ejercicio 4](./fotos/test4.2.PNG)
 
-# Gif probando buscador y filtrado por puntuación y país.
+#### Gif probando buscador y filtrado por puntuación y país.
 ![Foto del ejercicio 4.1](./fotos/GifEjer4.1.gif)
 
-# Gif probando filtrado por genero.
+#### Gif probando filtrado por genero.
 ![Foto del ejercicio 4.2](./fotos/GifEjer4.2.gif)
 
-# Gif probando la carga automatica de peliculas al hacer scroll.
+#### Gif probando la carga automatica de peliculas al hacer scroll.
 ![Foto del ejercicio 4.3](./fotos/GifEjer4.3.gif)
 
 
