@@ -73,8 +73,8 @@ prueba.
 ![Fichero con las actividades en formato HTML](./fotos/Captura.PNG)
 
 
-### 🔰 Ejercicio 1 -  Información Básica del Pokémon
--> Objetivo: Realizar una petición a la PokeAPI para obtener información básica de un Pokémon por su nombre.
+### 🔰 Ejercicio 1 -  "Hola Mundo" en TypeScript
+-> Objetivo: Crear un programa simple que imprima "Hola Mundo" en la consola.
 
 ![Foto del Test Plan del ejercicio 1](./fotos/test1.PNG)
 
