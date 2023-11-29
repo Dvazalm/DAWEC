@@ -47,14 +47,15 @@ Estos métodos permiten seleccionar elementos del DOM. querySelector utiliza sel
 ```
 -> Se requiere realizar los siguientes ejercicios:
 
-    ◽ Ejercicio 1: Información Básica del Pokémon
+    ◽ Ejercicio 1: "Hola Mundo" en TypeScript
 
-    ◽ Ejercicio 2: Comparativa de Pokémon
+    ◽ Ejercicio 2: Función con Tipos Básicos con Typescript
 
-    ◽ Ejercicio 3: Evoluciones y Habilidades
+    ◽ Ejercicio 3: Uso de Interfaces con Typescript
 
-    ◽ Ejercicio 4: Explorador de Películas
+    ◽ Ejercicio 4: Manipulación de Arrays con Typescript
 
+    ◽ Ejercicio 5: Crear una Pokedex con PokeAPI con Typescript
 
 ```
 
