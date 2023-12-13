@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pokedex</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#searchForm {
+    margin-bottom: 20px;
+}
+
+#pokemonInfo {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.warning {
+    color: #ff6347; /* Color coral para la advertencia */
+    animation: shake 0.5s ease-in-out; /* Animación de temblor */
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pokedex</h1>
+        <form id="searchForm">
+            <label for="pokemonInput">Buscar Pokémon:</label>
+            <input type="text" id="pokemonInput" placeholder="Nombre o ID del Pokémon">
+            <button type="submit">Buscar</button>
+        </form>
+        <div id="pokemonInfo" class="hidden">
+            <!-- La información del Pokémon se mostrará aquí -->
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
