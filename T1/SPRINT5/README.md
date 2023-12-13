@@ -79,3 +79,31 @@ prueba.
 ![Foto del Test Plan del ejercicio 1](./fotos/test1.PNG)
 
 ![Gif del ejercicio 1](./fotos/GifEjer1.gif)
+
+### 🔰 Ejercicio 2 -  Función con Tipos Básicos con Typescript
+-> Objetivo: Escribir una función que acepte un nombre (string) y una edad (number) y devuelva un saludo personalizado.
+
+![Foto del Test Plan del ejercicio 2](./fotos/test2.PNG)
+
+![Gif del ejercicio 2](./fotos/GifEjer2.gif)
+
+### 🔰 Ejercicio 3 -  Uso de Interfaces con Typescript
+-> Objetivo: Crear una interfaz para un objeto "Usuario" y utilizarla para crear un usuario.
+
+![Foto del Test Plan del ejercicio 3](./fotos/test3.PNG)
+
+![Gif del ejercicio 3](./fotos/GifEjer3.gif)
+
+### 🔰 Ejercicio 4 -  Manipulación de Arrays con Typescript
+-> Objetivo: Crear una aplicación simple que maneje una lista de tareas (to-do list) usando arrays en TypeScript.
+
+![Foto del Test Plan del ejercicio 4](./fotos/test4.PNG)
+
+![Gif del ejercicio 4](./fotos/GifEjer4.gif)
+
+### 🔰 Ejercicio 5 -  Crear una Pokedex con PokeAPI con Typescript
+-> Objetivo: Construir una aplicación en TypeScript que utilice la PokeAPI para mostrar información de Pokémon.
+
+![Foto del Test Plan del ejercicio 5](./fotos/test5.PNG)
+
+![Gif del ejercicio 5](./fotos/GifEjer5.gif)
