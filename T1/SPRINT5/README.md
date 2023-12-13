@@ -78,4 +78,4 @@ prueba.
 
 ![Foto del Test Plan del ejercicio 1](./fotos/test1.PNG)
 
-![Foto del ejercicio 1](./fotos/GifEjer1.gif)
+![Gif del ejercicio 1](./fotos/GifEjer1.gif)
