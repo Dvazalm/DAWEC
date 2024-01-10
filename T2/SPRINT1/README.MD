@@ -3,7 +3,7 @@
 
 ### Diferencias entre Angular y React
 
-#### Arquitectura
+### ◼ Arquitectura
 
 ### Angular
 - **Arquitectura:** Framework MVVM (Model-View-ViewModel).
@@ -17,7 +17,7 @@
 - **Módulos:** Organiza la aplicación en componentes reutilizables.
 - **Plantillas:** Utiliza JSX para definir la interfaz de usuario.
 
-#### Estado de la Aplicación
+### ◼ Estado de la Aplicación
 
 ### Angular
 - **Estado:** Utiliza servicios y dependencias para manejar el estado de la aplicación.
@@ -27,7 +27,7 @@
 - **Estado:** Utiliza el estado interno de los componentes y el contexto para gestionar el estado de la aplicación.
 - **Unidireccional:** Fomenta el flujo unidireccional de datos, pero también permite el uso de estados locales.
 
-#### Rendering
+### ◼ Rendering
 
 ### Angular
 - **Rendering:** Utiliza un enfoque de rendering basado en el DOM.
@@ -37,7 +37,7 @@
 - **Rendering:** Utiliza un Virtual DOM para optimizar el rendering.
 - **Reconciliación:** Realiza una reconciliación eficiente para actualizar solo las partes modificadas del DOM.
 
-#### Herramientas y Flexibilidad
+### ◼ Herramientas y Flexibilidad
 
 ### Angular
 - **Herramientas:** Viene con un conjunto integrado de herramientas.
@@ -47,7 +47,7 @@
 - **Herramientas:** Puedes elegir tus propias herramientas y librerías.
 - **Flexibilidad:** Ofrece más flexibilidad y se adapta a diferentes enfoques de desarrollo.
 
-#### Curva de Aprendizaje
+### ◼ Curva de Aprendizaje
 
 ### Angular
 - **Curva:** Mayor curva de aprendizaje debido a su complejidad y a la cantidad de conceptos que involucra.
@@ -55,7 +55,7 @@
 ### React
 - **Curva:** Generalmente considerada más fácil de aprender, especialmente para desarrolladores familiarizados con JavaScript.
 
-#### Comunidad y Adopción
+### ◼ Comunidad y Adopción
 
 ### Angular
 - **Comunidad:** Tiene una comunidad sólida y amplia.
