@@ -70,15 +70,15 @@
 ```
 -> Se requiere realizar los siguientes ejercicios:
 
-    ◽ Ejercicio 1: "Hola Mundo" en TypeScript
+    ◽ Ejercicio 1: Hola Mundo en React y Componente con Props
 
-    ◽ Ejercicio 2: Función con Tipos Básicos con Typescript
+    ◽ Ejercicio 2: Lista de Elementos
 
-    ◽ Ejercicio 3: Uso de Interfaces con Typescript
+    ◽ Ejercicio 3: Contador de Clicks
 
-    ◽ Ejercicio 4: Manipulación de Arrays con Typescript
+    ◽ Ejercicio 4: Aplicación de Tareas
 
-    ◽ Ejercicio 5: Crear una Pokedex con PokeAPI con Typescript
+    ◽ Ejercicio 5: Gestor de Tareas con Estados Complejos y Local Storage
 
 ```
 
@@ -96,36 +96,41 @@ prueba.
 ![Fichero con las actividades en formato HTML](./fotos/Captura.PNG)
 
 
-### 🔰 Ejercicio 1 -  "Hola Mundo" en TypeScript
--> Objetivo: Crear un programa simple que imprima "Hola Mundo" en la consola.
+### 🔰 Ejercicio 1 - Hola Mundo en React y Componente con Props
+-> Objetivo: Crea un componente funcional llamado HolaMundo que simplemente renderice un elemento h1 con el texto "¡Hola, Mundo!".
 
 ![Foto del Test Plan del ejercicio 1](./fotos/test1.PNG)
 
 ![Gif del ejercicio 1](./fotos/GifEjer1.gif)
 
-### 🔰 Ejercicio 2 -  Función con Tipos Básicos con Typescript
--> Objetivo: Escribir una función que acepte un nombre (string) y una edad (number) y devuelva un saludo personalizado.
+
+### 🔰 Ejercicio 2 - Lista de Elementos
+-> Objetivo: Crea un componente ListaDeFrutas que renderice una lista (ul) de elementos (li).
 
 ![Foto del Test Plan del ejercicio 2](./fotos/test2.PNG)
 
 ![Gif del ejercicio 2](./fotos/GifEjer2.gif)
 
-### 🔰 Ejercicio 3 -  Uso de Interfaces con Typescript
--> Objetivo: Crear una interfaz para un objeto "Usuario" y utilizarla para crear un usuario.
+
+### 🔰 Ejercicio 3 - Contador de clicks
+-> Objetivo: Crea un componente Contador que muestre un número (inicialmente 0) y un botón.
 
 ![Foto del Test Plan del ejercicio 3](./fotos/test3.PNG)
 
 ![Gif del ejercicio 3](./fotos/GifEjer3.gif)
 
-### 🔰 Ejercicio 4 -  Manipulación de Arrays con Typescript
--> Objetivo: Crear una aplicación simple que maneje una lista de tareas (to-do list) usando arrays en TypeScript.
+
+### 🔰 Ejercicio 4 - Contador de clicks
+-> Objetivo: Crea una aplicación de lista de tareas (ToDoApp) que permita al usuario añadir tareas, marcarlas como completadas y borrarlas.
 
 ![Foto del Test Plan del ejercicio 4](./fotos/test4.PNG)
 
 ![Gif del ejercicio 4](./fotos/GifEjer4.gif)
 
-### 🔰 Ejercicio 5 -  Crear una Pokedex con PokeAPI con Typescript
--> Objetivo: Construir una aplicación en TypeScript que utilice la PokeAPI para mostrar información de Pokémon.
+
+
+### 🔰 Ejercicio 5 - Contador de clicks
+Desarrollar una aplicación de gestión de tareas (to-do list) avanzada en React que no solo permita añadir, marcar y eliminar tareas, sino también categorizarlas y persistir los datos en el navegador usando Local Storage.
 
 ![Foto del Test Plan del ejercicio 5](./fotos/test5.PNG)
 

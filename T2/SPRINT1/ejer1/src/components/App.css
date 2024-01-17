@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+li{
+  list-style: none;
+}
+
+#imagen_fruta{
+  width: 30px;
+}
