@@ -36,9 +36,18 @@
     transform: rotate(360deg);
   }
 }
-
 /* components/App.css */
 /* Puedes agregar estilos según tu preferencia */
 
-/* components/App.css *
-/* Agrega estilos según tus necesidades */
+/* src/components/App.css */
+.app-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Añade estilos según tus preferencias */
+
+
