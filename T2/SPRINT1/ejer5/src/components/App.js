@@ -1,86 +1,82 @@
 // src/components/App.js
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
+import CategoryMenu from './CategoryMenu';
 import './App.css';
 
-const initialState = {
-  tasks: [],
-  categories: ['trabajo', 'personal', 'estudio'],
-  filter: 'all',
+const taskReducer = (state, action) => {
+  switch (action.type) {
+    case 'ADD_TASK':
+      return [...state, action.payload];
+    case 'TOGGLE_TASK':
+      return state.map((task) =>
+        task.id === action.payload ? { ...task, completed: !task.completed } : task
+      );
+    case 'DELETE_TASK':
+      return state.filter((task) => task.id !== action.payload);
+    default:
+      return state;
+  }
 };
 
-const tasksReducer = (state, action) => {
+const categoryReducer = (state, action) => {
   switch (action.type) {
-    case 'SET_TASKS':
-      return {
-        ...state,
-        tasks: action.payload,
-      };
-    case 'ADD_TASK':
-      return {
-        ...state,
-        tasks: [...state.tasks, action.payload],
-      };
-    case 'TOGGLE_TASK':
-      return {
-        ...state,
-        tasks: state.tasks.map((task) =>
-          task.id === action.payload ? { ...task, completed: !task.completed } : task
-        ),
-      };
-    case 'DELETE_TASK':
-      return {
-        ...state,
-        tasks: state.tasks.filter((task) => task.id !== action.payload),
-      };
+    case 'ADD_CATEGORY':
+      return [...state, action.payload];
+    case 'DELETE_CATEGORY':
+      return state.filter((category) => category !== action.payload);
     default:
       return state;
   }
 };
 
 const App = () => {
-  const [state, dispatch] = useReducer(tasksReducer, initialState);
-  const [loading, setLoading] = useState(true);
+  const [tasks, dispatchTasks] = useReducer(taskReducer, []);
+  const [categories, dispatchCategories] = useReducer(categoryReducer, ['Trabajo', 'Personal', 'Estudio']);
 
+  // Al cargar la aplicación, establecer las categorías predeterminadas si aún no existen en el estado
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem('tasks'));
-    if (storedTasks) {
-      dispatch({ type: 'SET_TASKS', payload: storedTasks });
+    if (categories.length === 0) {
+      dispatchCategories({ type: 'ADD_CATEGORY', payload: 'Trabajo' });
+      dispatchCategories({ type: 'ADD_CATEGORY', payload: 'Personal' });
+      dispatchCategories({ type: 'ADD_CATEGORY', payload: 'Estudio' });
     }
-    setLoading(false);
-  }, []); // Solo se ejecuta en el montaje inicial
-
-  useEffect(() => {
-    if (!loading) {
-      localStorage.setItem('tasks', JSON.stringify(state.tasks));
-    }
-  }, [state.tasks, loading]);
-
-  const addTask = (newTask) => {
-    const taskWithId = { ...newTask, id: Date.now(), completed: false };
-    dispatch({ type: 'ADD_TASK', payload: taskWithId });
-  };
-
-  const toggleTask = (taskId) => {
-    dispatch({ type: 'TOGGLE_TASK', payload: taskId });
-  };
-
-  const deleteTask = (taskId) => {
-    dispatch({ type: 'DELETE_TASK', payload: taskId });
-  };
+  }, [categories]);
 
   return (
-    <div className="app-container">
-      <h1>Gestor de Tareas</h1>
-      {loading ? (
-        <p>Cargando tareas...</p>
-      ) : (
-        <>
-          <TaskForm addTask={addTask} categories={state.categories} />
-          <TaskList tasks={state.tasks} toggleTask={toggleTask} deleteTask={deleteTask} />
-        </>
-      )}
+    <div className="body-container">
+      <div className="app-container">
+        <div className="forms-container">
+          <div className="task-form-container">
+            <h1>Gestor de Tareas</h1>
+            <TaskForm
+              tasks={tasks}
+              categories={categories}
+              addTask={(task) => dispatchTasks({ type: 'ADD_TASK', payload: task })}
+              addCategory={(category) => dispatchCategories({ type: 'ADD_CATEGORY', payload: category })}
+            />
+          </div>
+
+          <div className="task-list-container">
+            <TaskList
+            tasks={tasks}
+            toggleTask={(taskId) => dispatchTasks({ type: 'TOGGLE_TASK', payload: taskId })}
+            deleteTask={(taskId) => dispatchTasks({ type: 'DELETE_TASK', payload: taskId })}
+            categories={categories}
+          />
+        </div>
+
+          <div className="category-form-container">
+
+            <CategoryMenu
+              categories={categories}
+              deleteCategory={(category) => dispatchCategories({ type: 'DELETE_CATEGORY', payload: category })}
+            />
+          </div>
+        </div>
+    
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 // src/components/TaskList.js
 import React, { useState } from 'react';
 
-const TaskList = ({ tasks, toggleTask, deleteTask }) => {
+const TaskList = ({ tasks, toggleTask, deleteTask, categories }) => {
   const [filter, setFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('');
 
@@ -44,21 +44,23 @@ const TaskList = ({ tasks, toggleTask, deleteTask }) => {
           onChange={(e) => handleCategoryFilterChange(e.target.value)}
         >
           <option value="">Todos</option>
-          {/* Agrega opciones para cada categoría disponible */}
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
         </select>
       </div>
       <ul>
         {filteredTasks.map((task) => (
-          <li key={task.id}>
+          <li key={task.id} className={task.completed ? 'completed' : ''}>
             <input
               type="checkbox"
               checked={task.completed}
               onChange={() => toggleTask(task.id)}
             />
-            <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
-              {task.task} - {task.category}
-            </span>
-            <button onClick={() => deleteTask(task.id)}>Eliminar</button>
+            <span>{task.task} - {task.category}</span>
+            <button id='botonEliminar' onClick={() => deleteTask(task.id)}>Eliminar</button>
           </li>
         ))}
       </ul>
