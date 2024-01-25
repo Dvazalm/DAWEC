@@ -148,3 +148,39 @@ select {
 .task-list-container{
   margin: 0 100px;
 }
+
+
+#textEdit{
+  width: 100%;
+  scale: 0.5;
+}
+
+
+#opcionTasksMenu button{
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+
+#botonEliminar{
+  width: 70px;
+  text-align: center;
+  justify-content: center;;
+
+}
+
+
+#botonEditar{
+  width: 70px;
+  text-align: center;
+  justify-content: center;;
+}
+
+
+#checkboxOption{
+  margin-right: 20px;
+}
+
+#opcionTasksMenu{
+  margin-left: 20px;
+}

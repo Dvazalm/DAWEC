@@ -16,6 +16,10 @@ const taskReducer = (state, action) => {
       );
     case 'DELETE_TASK':
       return state.filter((task) => task.id !== action.payload);
+    case 'EDIT_TASK':
+      return state.map((task) =>
+        task.id === action.payload.id ? { ...task, task: action.payload.text } : task
+      );
     default:
       return state;
   }
@@ -84,6 +88,7 @@ const App = () => {
               tasks={tasks}
               toggleTask={(taskId) => dispatchTasks({ type: 'TOGGLE_TASK', payload: taskId })}
               deleteTask={(taskId) => dispatchTasks({ type: 'DELETE_TASK', payload: taskId })}
+              editTask={(taskId, newText) => dispatchTasks({ type: 'EDIT_TASK', payload: { id: taskId, text: newText } })}
               categories={categories}
             />
           </div>

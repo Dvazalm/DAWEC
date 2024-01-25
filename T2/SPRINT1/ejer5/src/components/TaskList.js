@@ -1,7 +1,8 @@
-// src/components/TaskList.js
 import React, { useState } from 'react';
 
-const TaskList = ({ tasks, toggleTask, deleteTask, categories }) => {
+const TaskList = ({ tasks, toggleTask, deleteTask, editTask, categories }) => {
+  const [editTaskId, setEditTaskId] = useState(null);
+  const [editTaskText, setEditTaskText] = useState('');
   const [filter, setFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('');
 
@@ -18,12 +19,20 @@ const TaskList = ({ tasks, toggleTask, deleteTask, categories }) => {
     return true;
   });
 
-  const handleFilterChange = (newFilter) => {
-    setFilter(newFilter);
+  const handleEditTask = (taskId, taskText) => {
+    setEditTaskId(taskId);
+    setEditTaskText(taskText);
   };
 
-  const handleCategoryFilterChange = (newCategoryFilter) => {
-    setCategoryFilter(newCategoryFilter);
+  const handleSaveEdit = (taskId) => {
+    editTask(taskId, editTaskText); // Actualizar la tarea editada en el estado global
+    setEditTaskId(null);
+    setEditTaskText('');
+  };
+
+  const handleCancelEdit = () => {
+    setEditTaskId(null);
+    setEditTaskText('');
   };
 
   return (
@@ -31,7 +40,7 @@ const TaskList = ({ tasks, toggleTask, deleteTask, categories }) => {
       <h2>Lista de Tareas</h2>
       <div>
         <label>Filtrar por estado:</label>
-        <select value={filter} onChange={(e) => handleFilterChange(e.target.value)}>
+        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
           <option value="all">Todos</option>
           <option value="completed">Completados</option>
           <option value="active">Activos</option>
@@ -41,7 +50,7 @@ const TaskList = ({ tasks, toggleTask, deleteTask, categories }) => {
         <label>Filtrar por categoría:</label>
         <select
           value={categoryFilter}
-          onChange={(e) => handleCategoryFilterChange(e.target.value)}
+          onChange={(e) => setCategoryFilter(e.target.value)}
         >
           <option value="">Todos</option>
           {categories.map((cat) => (
@@ -54,13 +63,29 @@ const TaskList = ({ tasks, toggleTask, deleteTask, categories }) => {
       <ul>
         {filteredTasks.map((task) => (
           <li key={task.id} className={task.completed ? 'completed' : ''}>
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => toggleTask(task.id)}
-            />
-            <span>{task.task} - {task.category}</span>
-            <button id='botonEliminar' onClick={() => deleteTask(task.id)}>Eliminar</button>
+            {editTaskId === task.id ? (
+              <>
+                <input
+                  id='textEdit'
+                  type="text"
+                  value={editTaskText}
+                  onChange={(e) => setEditTaskText(e.target.value)}
+                />
+                <button onClick={() => handleSaveEdit(task.id)}>Guardar</button>
+                <button onClick={handleCancelEdit}>Cancelar</button>
+              </>
+            ) : (
+              <>
+                <input
+                  type="checkbox"
+                  checked={task.completed}
+                  onChange={() => toggleTask(task.id)}
+                />
+                <span>{task.task} - {task.category}</span>
+                <button onClick={() => handleEditTask(task.id, task.task)}>Editar</button>
+                <button onClick={() => deleteTask(task.id)}>Eliminar</button>
+              </>
+            )}
           </li>
         ))}
       </ul>
