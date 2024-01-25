@@ -1,5 +1,4 @@
-// src/components/App.js
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 import CategoryMenu from './CategoryMenu';
@@ -7,6 +6,8 @@ import './App.css';
 
 const taskReducer = (state, action) => {
   switch (action.type) {
+    case 'SET_TASKS':
+      return action.payload;
     case 'ADD_TASK':
       return [...state, action.payload];
     case 'TOGGLE_TASK':
@@ -22,6 +23,8 @@ const taskReducer = (state, action) => {
 
 const categoryReducer = (state, action) => {
   switch (action.type) {
+    case 'SET_CATEGORIES':
+      return action.payload;
     case 'ADD_CATEGORY':
       return [...state, action.payload];
     case 'DELETE_CATEGORY':
@@ -32,17 +35,35 @@ const categoryReducer = (state, action) => {
 };
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
   const [tasks, dispatchTasks] = useReducer(taskReducer, []);
   const [categories, dispatchCategories] = useReducer(categoryReducer, ['Trabajo', 'Personal', 'Estudio']);
 
-  // Al cargar la aplicación, establecer las categorías predeterminadas si aún no existen en el estado
   useEffect(() => {
-    if (categories.length === 0) {
-      dispatchCategories({ type: 'ADD_CATEGORY', payload: 'Trabajo' });
-      dispatchCategories({ type: 'ADD_CATEGORY', payload: 'Personal' });
-      dispatchCategories({ type: 'ADD_CATEGORY', payload: 'Estudio' });
+    const savedTasks = JSON.parse(localStorage.getItem('tasks'));
+    const savedCategories = JSON.parse(localStorage.getItem('categories'));
+
+    if (savedTasks) {
+      dispatchTasks({ type: 'SET_TASKS', payload: savedTasks });
     }
-  }, [categories]);
+
+    if (savedCategories) {
+      dispatchCategories({ type: 'SET_CATEGORIES', payload: savedCategories });
+    }
+
+    setLoading(false); // Mark loading as false once data is loaded
+  }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      localStorage.setItem('categories', JSON.stringify(categories));
+    }
+  }, [tasks, categories, loading]);
+
+  if (loading) {
+    return <div>Loading...</div>; // Render a loading indicator while data is being loaded
+  }
 
   return (
     <div className="body-container">
@@ -60,22 +81,20 @@ const App = () => {
 
           <div className="task-list-container">
             <TaskList
-            tasks={tasks}
-            toggleTask={(taskId) => dispatchTasks({ type: 'TOGGLE_TASK', payload: taskId })}
-            deleteTask={(taskId) => dispatchTasks({ type: 'DELETE_TASK', payload: taskId })}
-            categories={categories}
-          />
-        </div>
+              tasks={tasks}
+              toggleTask={(taskId) => dispatchTasks({ type: 'TOGGLE_TASK', payload: taskId })}
+              deleteTask={(taskId) => dispatchTasks({ type: 'DELETE_TASK', payload: taskId })}
+              categories={categories}
+            />
+          </div>
 
           <div className="category-form-container">
-
             <CategoryMenu
               categories={categories}
               deleteCategory={(category) => dispatchCategories({ type: 'DELETE_CATEGORY', payload: category })}
             />
           </div>
         </div>
-    
       </div>
     </div>
   );
