@@ -135,4 +135,5 @@ Desarrollar una aplicación de gestión de tareas (to-do list) avanzada en React
 ![Foto del Test Plan del ejercicio 5](./fotos/test5.1.PNG)
 ![Foto del Test Plan del ejercicio 5](./fotos/test5.2.PNG)
 ![Foto del Test Plan del ejercicio 5](./fotos/test5.3.PNG)
+
 ![Gif del ejercicio 5](./fotos/GifEjer5.gif)
