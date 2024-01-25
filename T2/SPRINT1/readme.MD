@@ -132,6 +132,7 @@ prueba.
 ### 🔰 Ejercicio 5 - Contador de clicks
 Desarrollar una aplicación de gestión de tareas (to-do list) avanzada en React que no solo permita añadir, marcar y eliminar tareas, sino también categorizarlas y persistir los datos en el navegador usando Local Storage.
 
-![Foto del Test Plan del ejercicio 5](./fotos/test5.PNG)
-
+![Foto del Test Plan del ejercicio 5](./fotos/test5.1.PNG)
+![Foto del Test Plan del ejercicio 5](./fotos/test5.2.PNG)
+![Foto del Test Plan del ejercicio 5](./fotos/test5.3.PNG)
 ![Gif del ejercicio 5](./fotos/GifEjer5.gif)

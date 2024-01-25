@@ -18,7 +18,7 @@ const taskReducer = (state, action) => {
       return state.filter((task) => task.id !== action.payload);
     case 'EDIT_TASK':
       return state.map((task) =>
-        task.id === action.payload.id ? { ...task, task: action.payload.text } : task
+        task.id === action.payload.id ? { ...task, task: action.payload.task } : task
       );
     default:
       return state;
@@ -33,6 +33,10 @@ const categoryReducer = (state, action) => {
       return [...state, action.payload];
     case 'DELETE_CATEGORY':
       return state.filter((category) => category !== action.payload);
+    case 'EDIT_CATEGORY':
+      return state.map((category) =>
+        category === action.payload.oldCategory ? action.payload.newCategory : category
+      );
     default:
       return state;
   }
@@ -88,7 +92,8 @@ const App = () => {
               tasks={tasks}
               toggleTask={(taskId) => dispatchTasks({ type: 'TOGGLE_TASK', payload: taskId })}
               deleteTask={(taskId) => dispatchTasks({ type: 'DELETE_TASK', payload: taskId })}
-              editTask={(taskId, newText) => dispatchTasks({ type: 'EDIT_TASK', payload: { id: taskId, text: newText } })}
+              editTask={(taskId, taskText) => dispatchTasks({ type: 'EDIT_TASK', payload: { id: taskId, task: taskText } })}
+              editCategory={(taskId, category) => dispatchCategories({ type: 'EDIT_CATEGORY', payload: { oldCategory: tasks.find(task => task.id === taskId).category, newCategory: category } })}
               categories={categories}
             />
           </div>

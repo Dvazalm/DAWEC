@@ -42,7 +42,7 @@ const TaskForm = ({ addTask, categories, addCategory }) => {
       <input type="text" value={task} onChange={(e) => setTask(e.target.value)} />
       <label>Categoría:</label>
       <select value={category} onChange={handleCategoryChange}>
-        <option value="">Selecciona una categoría</option>
+        <option value="">Sin categoria</option>
         {categories.map((cat) => (
           <option key={cat} value={cat}>
             {cat}
