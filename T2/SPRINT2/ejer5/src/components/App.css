@@ -1,0 +1,145 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+li{
+  list-style: none;
+}
+
+/* App.css */
+
+.App {
+  text-align: center;
+}
+
+/* App.css */
+
+/* App.css */
+
+/* App.css */
+
+/* Estilos para la galería */
+.galeria {
+  margin-top: 20px;
+  padding: 20px;
+  white-space: nowrap; /* Evita el salto de línea */
+  overflow: hidden; /* Oculta la barra de desplazamiento horizontal */
+}
+
+/* Estilos para el contenedor de imágenes */
+.galeria .imagenes-grid {
+  display: inline-block;
+  white-space: nowrap; /* Evita el salto de línea dentro del contenedor */
+}
+
+/* Estilos para las imágenes */
+.galeria .imagenes-grid img {
+  display: inline-block;
+  width: calc(15% - 10px); /* Ancho de las imágenes (10% del contenedor - margen) */
+  height: 400px; /* Altura fija para todas las imágenes */
+  margin-right: 10px; /* Espacio entre las imágenes */
+  cursor: pointer; /* Cursor de ratón al pasar por encima */
+  transition: transform 0.3s ease; /* Efecto de transición suave al pasar el ratón */
+}
+
+
+
+
+
+form {
+  margin-bottom: 20px;
+}
+
+form input {
+  padding: 10px;
+  width: 300px;
+  margin-right: 10px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.imagenes-grid {
+  overflow-x: auto; /* Añade desplazamiento horizontal */
+  white-space: nowrap; /* Evita saltos de línea */
+  font-size: 0; /* Elimina espacio entre las imágenes */
+}
+
+.imagenes-grid img {
+  width: auto; /* Ajusta el ancho automáticamente para mantener la relación de aspecto */
+  height: 300px; /* Establece la altura deseada para las imágenes */
+  margin-right: 10px; /* Añade espacio entre las imágenes */
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.cargar-mas-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.cargar-mas-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
