@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+}
+
+ul{
+  list-style: none;
+}
+
+span{
+  padding-left: 10px;
+  font-size: 15px;
+  color: red;
+}
+
+ textarea{
+  height: 12px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+.buscador-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-input {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cambiamos esta línea */
+  gap: 20px;
+}
+
+.movie {
+  background-color: #b2b2b2;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex; /* Nueva línea */
+  flex-direction: column; /* Nueva línea */
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Nueva línea */
+}
+
+.movie-details {
+  padding: 10px 0;
+  font-size: 20px;
+  flex-grow: 1; /* Nueva línea */
+}
+
+/* Añadimos un media query para que las películas se muestren en una columna en pantallas pequeñas */
+@media (max-width: 768px) {
+  .movies-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
