@@ -22,6 +22,7 @@ Para realizar este apartado de Tarea AVANZADA, lo primero que he hecho es hacer 
 
 ## 🌳 Arbol de decisiones
 Este es el árbol de decisiones con el funcionamiento de la APP
+
 ![Fichero con las actividades en formato HTML](./ArbolDeDecisiones.png)
 
 
